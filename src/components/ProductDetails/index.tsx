@@ -23,12 +23,14 @@ const ProductDetails: React.FC<Props> = ({ item }) => {
   };
 
   return (
-    <div className="flex flex-col flex-1 gap-5 px-5 py-2">
+    <div className="flex flex-col md:justify-center flex-1 gap-5 px-5 py-2 md:max-w-[600px]">
       <Title company={item.company} title={item.name} />
       <Description description={item.description} />
       <Price price={item.price} discount={50} />
-      <Quantity quantity={quantity} updateQuantity={updateQuantity} />
-      <Button buyItem={buyItem} />
+      <div className="flex flex-col md:flex-row gap-5 md:gap-2">
+        <Quantity quantity={quantity} updateQuantity={updateQuantity} />
+        <Button buyItem={buyItem} />
+      </div>
     </div>
   );
 };

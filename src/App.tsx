@@ -50,9 +50,9 @@ const App = () => {
   return (
     <AppDispatch.Provider value={{ addToCart, removeFromCart, clearCart }}>
       <AppContext.Provider value={state}>
-        <div className="flex flex-col lg:max-w-[1440px] mx-auto">
+        <div className="flex flex-col container mx-auto">
           <Menu />
-          <div className="flex flex-col md:flex-row gap-3">
+          <div className="flex flex-col md:flex-row gap-3 md:gap-10 md:pt-10 md:max-w-[765px] lg:max-w-[1440px] md:mx-auto">
             <Gallery item={item} />
             <ProductDetails item={item} />
           </div>

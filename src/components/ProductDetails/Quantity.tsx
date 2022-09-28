@@ -8,7 +8,7 @@ interface Props {
 
 const Quantity: React.FC<Props> = ({ quantity, updateQuantity }) => {
   return (
-    <div className="w-full flex py-5 items-center px-5 flex-row justify-between bg-light-grayish-blue rounded-lg">
+    <div className="w-full md:w-[50%] flex py-5 items-center px-5 flex-row justify-between bg-light-grayish-blue rounded-lg">
       <img className="w-5 h-2" src={minusIcon} alt="" onClick={() => updateQuantity(-1)} />
       <span className="flex-1 font-bold text-center">{quantity}</span>
       <img className="w-5 h-5" src={plusIcon} alt="" onClick={() => updateQuantity(1)} />
