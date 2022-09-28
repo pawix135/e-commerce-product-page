@@ -1,13 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .nav-item {
+    @apply hover:cursor-pointer px-3 flex items-center justify-center relative text-grayish-blue hover:text-dark-grayish-blue text-lg font-normal;
+  }
+  .nav-item.nav-active {
+    @apply before:w-full before:h-1 before:bg-orange before:absolute before:bottom-0 before:left-0 text-dark-grayish-blue;
+  }
+
+  .cart {
+    @apply absolute md:w-[400px] w-3/4 bg-white shadow-xl
+    transition duration-200 delay-75 origin-top scale-y-0 group-hover:scale-y-100
+    rounded-lg flex flex-col
+    top-12 left-1/2 -translate-x-1/2 z-10
+    md:top-0 md:-left-20 translate-y-12 md:-translate-x-1/2;
+  }
 }
